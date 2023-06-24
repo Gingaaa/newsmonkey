@@ -1,0 +1,453 @@
+.App {
+  text-align: center;
+}
+
+
+/*    MODE COLOR CHANGES     */
+.bground {
+  background-image: url("../public/morning.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bgrounds {
+  background-image: url("../public/night.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.dark {
+  /* background-image: url("../public/ntheme.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; */
+  background-color: black;
+}
+.light {
+  /* background-image: url("../public/mtheme.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed; */
+  background-color: #fff5e0;
+}
+.dcard{
+  background-color: #141414;
+  box-shadow: 0px 0px 4px 1px;
+  color: white;}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/*    NEWS CARD DESIGNING     */
+.carda{
+    border-radius: 1.25rem;
+    height: 540px;
+}
+.carda img{
+  border-radius: 1.25rem;
+  height: 208px;
+}
+.badgea{
+  margin-right: 7px;
+}
+.readm{
+  color: blue;
+  text-decoration: none;
+}
+.card-bodys{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 180px;
+  margin: 5px 0 5px 0;
+}
+
+
+
+/*        ADVANCED MODE            */
+.modech {
+  color: white;
+  font-size: 23px;
+  margin-right: 10px;
+}
+
+.label {
+  height: 35px;
+  width: 76px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 0 0 5px 4px rgba(255, 255, 255, 1),
+    inset 0 0 20px 1px rgba(0, 0, 0, 0.488), 10px 20px 30px rgba(0, 0, 0, 0.096),
+    inset 0 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 5px 4px rgba(255, 255, 255, 1),
+    inset 0 0 20px 1px rgba(0, 0, 0, 0.488), 10px 20px 30px rgba(0, 0, 0, 0.096),
+    inset 0 0 0 3px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+}
+
+.label:hover {
+  -webkit-transform: perspective(100px) rotateX(5deg) rotateY(-5deg);
+  transform: perspective(100px) rotateX(5deg) rotateY(-5deg);
+}
+
+#checkbox:checked ~ .label:hover {
+  -webkit-transform: perspective(100px) rotateX(-5deg) rotateY(5deg);
+  transform: perspective(100px) rotateX(-5deg) rotateY(5deg);
+}
+
+#checkbox {
+  display: none;
+}
+
+#checkbox:checked ~ .label::before {
+  left: 45px;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #414141 70%);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.label::before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #000000;
+  background-image: linear-gradient(
+    130deg,
+    #757272 10%,
+    #ffffff 11%,
+    #726f6f 62%
+  );
+  left: 7px;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3),
+    10px 10px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3), 10px 10px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.Btn {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(
+    to right,
+    #77530a,
+    #ffd277,
+    #77530a,
+    #77530a,
+    #ffd277,
+    #77530a
+  );
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+}
+
+.Btn::before {
+  position: absolute;
+  content: "SUBSCRIBE";
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.Btn:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn:active {
+  transform: scale(0.95);
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.brandBtn h2 {
+  color: white;
+  margin-right: 20px;
+}
+
+/* Mood Switch */
+
+.toggleWrapper {
+  position: absolute;
+  top: 50%;
+  left: 92%;
+  overflow: hidden;
+  padding: 0 200px;
+  transform: translate3d(-50%, -50%, 0);
+  color: white;
+}
+
+.toggleWrapper input {
+  position: absolute;
+  left: -99em;
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 83px;
+  height: 44px;
+  background-color: #83d8ff;
+  border-radius: 84px;
+  transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.toggle:before {
+  content: "AM";
+  position: absolute;
+  left: -50px;
+  top: 8px;
+  font-size: 18px;
+}
+
+.toggle:after {
+  content: "PM";
+  position: absolute;
+  right: -48px;
+  top: 8px;
+  font-size: 18px;
+  color: #749ed7;
+}
+
+.toggle__handler {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  top: 3px;
+  left: -20px;
+  width: 38px;
+  height: 38px;
+  background-color: #ffcf96;
+  border-radius: 50px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: rotate(-45deg);
+}
+
+.toggle__handler .crater {
+  position: absolute;
+  background-color: #e8cda5;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  border-radius: 100%;
+}
+
+.toggle__handler .crater--1 {
+  top: 18px;
+  left: 10px;
+  width: 4px;
+  height: 4px;
+}
+
+.toggle__handler .crater--2 {
+  top: 28px;
+  left: 22px;
+  width: 6px;
+  height: 6px;
+}
+
+.toggle__handler .crater--3 {
+  top: 10px;
+  left: 25px;
+  width: 8px;
+  height: 8px;
+}
+
+.star {
+  position: absolute;
+  background-color: #fff;
+  transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  border-radius: 50%;
+}
+
+.star--1 {
+  top: 10px;
+  left: 35px;
+  z-index: 0;
+  width: 30px;
+  height: 3px;
+}
+
+.star--2 {
+  top: 18px;
+  left: 28px;
+  z-index: 1;
+  width: 30px;
+  height: 3px;
+}
+
+.star--3 {
+  top: 27px;
+  left: 40px;
+  z-index: 0;
+  width: 30px;
+  height: 3px;
+}
+
+.star--4,
+.star--5,
+.star--6 {
+  opacity: 0;
+  transition: all 300ms 0 cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.star--4 {
+  top: 16px;
+  left: 11px;
+  z-index: 0;
+  width: 2px;
+  height: 2px;
+  transform: translate3d(3px, 0, 0);
+}
+
+.star--5 {
+  top: 32px;
+  left: 17px;
+  z-index: 0;
+  width: 3px;
+  height: 3px;
+  transform: translate3d(3px, 0, 0);
+}
+
+.star--6 {
+  top: 36px;
+  left: 28px;
+  z-index: 0;
+  width: 2px;
+  height: 2px;
+  transform: translate3d(3px, 0, 0);
+}
+
+input:checked + .toggle {
+  background-color: #749dd6;
+}
+
+input:checked + .toggle:before {
+  color: #749ed7;
+}
+
+input:checked + .toggle:after {
+  color: #fff;
+}
+
+input:checked + .toggle .toggle__handler {
+  background-color: #ffe5b5;
+  transform: translate3d(40px, 0, 0) rotate(0);
+}
+
+input:checked + .toggle .toggle__handler .crater {
+  opacity: 1;
+}
+
+input:checked + .toggle .star--1 {
+  width: 2px;
+  height: 2px;
+}
+
+input:checked + .toggle .star--2 {
+  width: 4px;
+  height: 4px;
+  transform: translate3d(-5px, 0, 0);
+}
+
+input:checked + .toggle .star--3 {
+  width: 2px;
+  height: 2px;
+  transform: translate3d(-7px, 0, 0);
+}
+
+input:checked + .toggle .star--4,
+input:checked + .toggle .star--5,
+input:checked + .toggle .star--6 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+input:checked + .toggle .star--4 {
+  transition: all 300ms 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+input:checked + .toggle .star--5 {
+  transition: all 300ms 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+input:checked + .toggle .star--6 {
+  transition: all 300ms 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
