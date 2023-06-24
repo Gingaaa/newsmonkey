@@ -48,7 +48,7 @@ const News = (props) => {
 
     return (
         <>
-        {props.theme == 'light'?(<h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>):
+        {props.theme === 'light'?(<h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>):
         (<h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px',color: 'white' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>)}
             
             {loading && <Spinner />}

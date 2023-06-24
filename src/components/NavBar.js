@@ -15,7 +15,7 @@ const NavBar = ({ change }) => {
 
   return (
     <div>
-      <nav className={`navbar fixed-top navbar-expand-lg navbar-dark ${theme == "light" ? 'bground' : 'bgrounds'}`}>
+      <nav className={`navbar fixed-top navbar-expand-lg navbar-dark ${theme === "light" ? 'bground' : 'bgrounds'}`}>
         <div className="container-fluid ">
           <div className="brandBtn">
             <h2>News App</h2>

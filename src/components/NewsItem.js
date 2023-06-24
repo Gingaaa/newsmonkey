@@ -4,7 +4,7 @@ const NewsItem = (props) => {
     let { title, description, imageUrl, newsUrl, author, date, source, theme } = props;
     return (
         <div className="my-3">
-            <div className={`card carda ${theme == "dark" ? 'dcard' :null}`}>
+            <div className={`card carda ${theme === "dark" ? 'dcard' :null}`}>
                 <div style={{
                     display: 'flex',
                     justifyContent: 'flex-end',
