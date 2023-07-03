@@ -23,7 +23,7 @@ const News = (props) => {
         props.setProgress(30);
         let parsedDatas = await data.json()
         props.setProgress(70);
-        if(props.search != ""){
+        if(props.search !== ""){
             const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}`;
             let data = await fetch(url);
             let parsedData = await data.json()
