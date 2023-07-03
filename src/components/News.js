@@ -21,20 +21,37 @@ const News = (props) => {
         setLoading(true)
         let data = await fetch(url);
         props.setProgress(30);
-        let parsedData = await data.json()
+        let parsedDatas = await data.json()
         props.setProgress(70);
-        setArticles(parsedData.articles)
-        setTotalResults(parsedData.totalResults)
+        if(props.search != ""){
+            const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}`;
+            let data = await fetch(url);
+            let parsedData = await data.json()
+            const datas = parsedData.articles;
+            const inputValue = props.search;
+            const filteredArray = datas.filter(
+                item => item.title.toLowerCase().includes(inputValue.toLowerCase())
+              );
+            setArticles(filteredArray);
+            // console.log(parsedData );
+        }else{
+            setArticles(parsedDatas.articles);
+        }
+        setTotalResults(parsedDatas.totalResults)
         setLoading(false)
         props.setProgress(100);
-        console.log(props);
+        // console.log(props);
+       
     }
 
     useEffect(() => {
         document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
+        // updateNews();
+    }, []);
+
+    useEffect(()=>{
         updateNews();
-        // eslint-disable-next-line
-    }, [])
+    },[props.search]);
 
 
     const fetchMoreData = async () => {
@@ -49,7 +66,7 @@ const News = (props) => {
     return (
         <>
         {props.theme === 'light'?(<h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>):
-        (<h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px',color: 'white' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>)}
+        (<h1 className="text-center rainbow-texts" style={{ margin: '35px 0px', marginTop: '90px',color: 'white' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>)}
             
             {loading && <Spinner />}
             <InfiniteScroll

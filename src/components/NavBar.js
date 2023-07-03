@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ change }) => {
+const NavBar = ({ change,searchvalue }) => {
   const [theme, setTheme] = useState("light");
   const toggleTheme = () => {
     if (theme === "light") {
@@ -12,13 +12,25 @@ const NavBar = ({ change }) => {
       change(theme);
     }
   };
+  const find = (e)=>{
+    searchvalue(e.target.value)
+  }
 
   return (
     <div>
-      <nav className={`navbar fixed-top navbar-expand-lg navbar-dark ${theme === "light" ? 'bground' : 'bgrounds'}`}>
+      <nav
+        className={`navbar fixed-top navbar-expand-lg navbar-dark ${
+          theme === "light" ? "bground" : "bgrounds"
+        }`}
+      >
         <div className="container-fluid ">
           <div className="brandBtn">
-            <h2>News App</h2>
+            {theme === "light" ? (
+              <h2>News App</h2>
+            ) : (
+              <h2 className="rainbow-text">News App</h2>
+            )}
+            {/* <h2 className="rainbow-text">News App</h2> */}
           </div>
           <button
             className="navbar-toggler"
@@ -44,11 +56,7 @@ const NavBar = ({ change }) => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
-                  className="link"
-                  aria-current="page"
-                  to="/entertainment"
-                >
+                <Link className="link" aria-current="page" to="/entertainment">
                   Entertainment
                 </Link>
               </li>
@@ -78,6 +86,9 @@ const NavBar = ({ change }) => {
                 </Link>
               </li>
             </ul>
+          </div>
+          <div className="searchbar">
+            <input type="text" onChange={find} placeholder="Search here"/>
           </div>
           <div className="toggleWrapper">
             <input type="checkbox" className="dn" id="dn" />

@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 /*    MODE COLOR CHANGES     */
 .bground {
   background-image: url("../public/morning.jpg");
@@ -33,10 +32,11 @@
   background-attachment: fixed; */
   background-color: #fff5e0;
 }
-.dcard{
+.dcard {
   background-color: #141414;
   box-shadow: 0px 0px 4px 1px;
-  color: white;}
+  color: white;
+}
 
 .App-logo {
   height: 40vmin;
@@ -73,24 +73,23 @@
   }
 }
 
-
 /*    NEWS CARD DESIGNING     */
-.carda{
-    border-radius: 1.25rem;
-    height: 540px;
+.carda {
+  border-radius: 1.25rem;
+  height: 540px;
 }
-.carda img{
+.carda img {
   border-radius: 1.25rem;
   height: 208px;
 }
-.badgea{
+.badgea {
   margin-right: 7px;
 }
-.readm{
+.readm {
   color: blue;
   text-decoration: none;
 }
-.card-bodys{
+.card-bodys {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -98,8 +97,6 @@
   height: 180px;
   margin: 5px 0 5px 0;
 }
-
-
 
 /*        ADVANCED MODE            */
 .modech {
@@ -450,4 +447,51 @@ input:checked + .toggle .star--5 {
 
 input:checked + .toggle .star--6 {
   transition: all 300ms 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.rainbow-text {
+  background: linear-gradient(to right, #ff706d, #fd0054, #5d00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px -2px 18px #ff99cc;
+}
+
+.rainbow-texts {
+  background: linear-gradient(
+    to right,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    purple
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 1px 33px #ff99cc;
+}
+.searchbar {
+  margin: 0 274px 0 0;
+  box-shadow: 0px 0px 2px 1px #ffffe6;
+  background-color: ghostwhite;
+  padding: 1px;
+  width: 250px;
+  border-radius: 13px;
+}
+.searchbar input {
+  border: none;
+  font-size: 15px;
+  width: 208px;
+}
+.searchbar input:focus {
+  outline: none;
+  border: none;
+}
+.searchbar img {
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+}
+.searchbar img:hover {
+  cursor: pointer;
 }
