@@ -46,12 +46,14 @@ const News = (props) => {
 
     useEffect(() => {
         document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
-        updateNews();
-    }, [props.category, props.search]);
+        // updateNews(props.search);
+    }, [props.category]);
 
-    // useEffect(()=>{
-    //     updateNews();
-    // },[props.search]);
+    useEffect(()=>{
+        if(props.search !== ''){
+            updateNews();
+        }
+    });
 
 
     const fetchMoreData = async () => {
